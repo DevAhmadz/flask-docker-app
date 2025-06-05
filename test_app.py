@@ -1,7 +1,7 @@
 # test_app.py
-import app
+from app import app
 
 def test_home():
-    response = app.app.test_client().get('/')
+    response = app.test_client().get('/')
     assert response.status_code == 200
-    assert "Hello from docker on Gitpod" in response.data
+    assert b"Hello from docker on Gitpod" in response.data
